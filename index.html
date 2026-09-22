@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kia Stinger GT — historia jednej pasji</title>
-<meta name="description" content="Nie ogłoszenie. Historia białego Kia Stingera GT, który zamienił się w matowo-czerwoną bestię. Zdjęcia, wideo, detale i kontakt.">
+<title id="pageTitle">Kia Stinger GT — historia jednej pasji</title>
+<meta id="pageDescription" name="description" content="Nie ogłoszenie. Historia białego Kia Stingera GT, który zamienił się w matowo-czerwoną bestię. Zdjęcia, wideo, detale i kontakt.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +19,12 @@
   <div class="nav-inner">
     <a href="#top" class="brand">STINGER<span>GT</span></a>
     <nav class="nav-links">
-      <a href="#historia">Historia</a>
-      <a href="#detale">Detale</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#kontakt" class="nav-cta">Kontakt</a>
+      <a href="#historia" data-i18n="nav.historia">Historia</a>
+      <a href="#detale" data-i18n="nav.detale">Detale</a>
+      <a href="#galeria" data-i18n="nav.galeria">Galeria</a>
+      <a href="#wideo" data-i18n="nav.wideo">Wideo</a>
+      <a href="#kontakt" class="nav-cta" data-i18n="nav.kontakt">Kontakt</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -36,13 +38,13 @@
     <div class="hero-fade"></div>
   </div>
   <div class="hero-content">
-    <p class="eyebrow">Nie kolejne ogłoszenie motoryzacyjne</p>
-    <h1>Nie każdy Stinger<br>ma <em>historię</em> do opowiedzenia.</h1>
-    <p class="hero-sub">Białe GT z salonu, które pewnego dnia zniknęło pod matową czerwono-czarną folią.
+    <p class="eyebrow" data-i18n="hero.eyebrow">Nie kolejne ogłoszenie motoryzacyjne</p>
+    <h1 data-i18n-html="hero.h1">Nie każdy Stinger<br>ma <em>historię</em> do opowiedzenia.</h1>
+    <p class="hero-sub" data-i18n="hero.sub">Białe GT z salonu, które pewnego dnia zniknęło pod matową czerwono-czarną folią.
     To, co zostało, przeczytasz poniżej — zdjęcia, wideo i wszystko, co warto wiedzieć.</p>
     <div class="hero-actions">
-      <a href="#historia" class="btn btn-primary">Poznaj historię</a>
-      <a href="#galeria" class="btn btn-ghost">Zobacz zdjęcia</a>
+      <a href="#historia" class="btn btn-primary" data-i18n="hero.cta1">Poznaj historię</a>
+      <a href="#galeria" class="btn btn-ghost" data-i18n="hero.cta2">Zobacz zdjęcia</a>
     </div>
   </div>
   <a href="#historia" class="scroll-cue" aria-label="Przewiń niżej"><span></span></a>
@@ -59,66 +61,66 @@
 <section class="story" id="historia">
   <div class="story-inner">
     <div class="story-text">
-      <p class="section-label">01 — Historia</p>
-      <h2>Kupiłem je białe.<br>Zostawiłem coś więcej.</h2>
-      <p>Stinger od pierwszego dnia nie był dla mnie „samochodem do przemieszczania się”. To był projekt.
+      <p class="section-label" data-i18n="story.label">01 — Historia</p>
+      <h2 data-i18n-html="story.h2">Kupiłem je białe.<br>Zostawiłem coś więcej.</h2>
+      <p data-i18n="story.p1">Stinger od pierwszego dnia nie był dla mnie „samochodem do przemieszczania się”. To był projekt.
       Odebrany prosto z salonu, w perłowej bieli, z czerwoną nappą w środku i panoramicznym dachem —
       wyglądał świetnie. Ale czułem, że stać go na więcej charakteru.</p>
-      <p>Stąd decyzja o oklejeniu na matową, przechodzącą w gradiencie folię czerwono-czarną.
+      <p data-i18n="story.p2">Stąd decyzja o oklejeniu na matową, przechodzącą w gradiencie folię czerwono-czarną.
       Efekt? Samochód, który na parkingu robi się głośny, mimo że silnik akurat milczy.
       To nie jest „naprawiony wypadek” ani „tuning na szybko” — to przemyślana metamorfoza auta,
       które i tak miało już wszystko, czego potrzeba.</p>
       <div class="story-quote">
-        <p>„Kupując Stingera nie szukałem kolejnego SUV-a. Szukałem auta, które ma charakter
+        <p data-i18n="story.quote">„Kupując Stingera nie szukałem kolejnego SUV-a. Szukałem auta, które ma charakter
         zanim jeszcze ruszy z miejsca.”</p>
       </div>
     </div>
     <div class="story-visual">
       <img src="assets/img/9.jpg" alt="Kia Stinger GT w bieli, tył pojazdu" class="story-img story-img-1">
       <img src="assets/img/1.jpg" alt="Kia Stinger GT oklejony na czerwono-czarno" class="story-img story-img-2">
-      <div class="story-badge">Białe <span>→</span> Folia</div>
+      <div class="story-badge"><span data-i18n="story.badgeFrom">Białe</span> <span>→</span> <span data-i18n="story.badgeTo">Folia</span></div>
     </div>
   </div>
 </section>
 
 <section class="specs" id="detale">
   <div class="specs-inner">
-    <p class="section-label light">02 — Detale</p>
-    <h2 class="specs-title">To, co warto wiedzieć na pierwszy rzut oka</h2>
-    <p class="specs-note">Poniżej podstawowe informacje widoczne „po aucie”. Pełne dane (rok, przebieg,
+    <p class="section-label light" data-i18n="specs.label">02 — Detale</p>
+    <h2 class="specs-title" data-i18n="specs.h2">To, co warto wiedzieć na pierwszy rzut oka</h2>
+    <p class="specs-note" data-i18n="specs.note">Poniżej podstawowe informacje widoczne „po aucie”. Pełne dane (rok, przebieg,
     historia serwisowa, dokładna wersja silnika) chętnie opowiem osobiście — bez tego trudno oddać, jak
     to auto naprawdę jeździ.</p>
 
     <div class="specs-grid">
       <div class="spec-card">
         <span class="spec-icon">🏁</span>
-        <h3>Kia Stinger GT</h3>
-        <p>Wersja liftingowana (nowe logo Kia na grillu i klapie) — najbardziej dopracowana odsłona Stingera.</p>
+        <h3 data-i18n="specs.c1.h">Kia Stinger GT</h3>
+        <p data-i18n="specs.c1.p">Wersja liftingowana (nowe logo Kia na grillu i klapie) — najbardziej dopracowana odsłona Stingera.</p>
       </div>
       <div class="spec-card">
         <span class="spec-icon">🔥</span>
-        <h3>Silnik V6 Twin-Turbo</h3>
-        <p>Poczwórny wydech i odznaka GT to podpis mocniejszej, sześciocylindrowej jednostki 3.3 biturbo.</p>
+        <h3 data-i18n="specs.c2.h">Silnik V6 Twin-Turbo</h3>
+        <p data-i18n="specs.c2.p">Poczwórny wydech i odznaka GT to podpis mocniejszej, sześciocylindrowej jednostki 3.3 biturbo.</p>
       </div>
       <div class="spec-card">
         <span class="spec-icon">🎨</span>
-        <h3>Folia matowa fade</h3>
-        <p>Przejście z czerni w czerwień na masce i błotnikach — wykonane na bazie fabrycznej bieli.</p>
+        <h3 data-i18n="specs.c3.h">Folia matowa fade</h3>
+        <p data-i18n="specs.c3.p">Przejście z czerni w czerwień na masce i błotnikach — wykonane na bazie fabrycznej bieli.</p>
       </div>
       <div class="spec-card">
         <span class="spec-icon">🪑</span>
-        <h3>Czerwona nappa</h3>
-        <p>Skórzane fotele w kolorze dopasowanym do charakteru oklejenia nadwozia.</p>
+        <h3 data-i18n="specs.c4.h">Czerwona nappa</h3>
+        <p data-i18n="specs.c4.p">Skórzane fotele w kolorze dopasowanym do charakteru oklejenia nadwozia.</p>
       </div>
       <div class="spec-card">
         <span class="spec-icon">☀️</span>
-        <h3>Dach panoramiczny</h3>
-        <p>Przeszklony, elektrycznie sterowany dach na całej długości kabiny.</p>
+        <h3 data-i18n="specs.c5.h">Dach panoramiczny</h3>
+        <p data-i18n="specs.c5.p">Przeszklony, elektrycznie sterowany dach na całej długości kabiny.</p>
       </div>
       <div class="spec-card">
         <span class="spec-icon">⚙️</span>
-        <h3>Felgi wielosprychowe</h3>
-        <p>Czarno-polerowane koła w stylu GT, dopełniające sylwetkę liftbacka.</p>
+        <h3 data-i18n="specs.c6.h">Felgi wielosprychowe</h3>
+        <p data-i18n="specs.c6.p">Czarno-polerowane koła w stylu GT, dopełniające sylwetkę liftbacka.</p>
       </div>
     </div>
   </div>
@@ -126,26 +128,26 @@
 
 <section class="gallery" id="galeria">
   <div class="gallery-inner">
-    <p class="section-label">03 — Galeria</p>
-    <h2>Zobacz je z każdej strony</h2>
-    <p class="gallery-note">Kliknij zdjęcie, aby powiększyć.</p>
+    <p class="section-label" data-i18n="gallery.label">03 — Galeria</p>
+    <h2 data-i18n="gallery.h2">Zobacz je z każdej strony</h2>
+    <p class="gallery-note" data-i18n="gallery.note">Kliknij zdjęcie, aby powiększyć.</p>
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
 </section>
 
-<section class="video-section" id="wideo" style="display:none;">
+<section class="video-section" id="wideo">
   <div class="video-inner">
-    <p class="section-label light">04 — Wideo</p>
-    <h2 class="video-title">Detale w ruchu</h2>
-    <p class="video-note">Krótkie ujęcia — bo niektórych rzeczy nie da się pokazać na zdjęciu.</p>
+    <p class="section-label light" data-i18n="video.label">04 — Wideo</p>
+    <h2 class="video-title" data-i18n="video.h2">Detale w ruchu</h2>
+    <p class="video-note" data-i18n="video.note">Krótkie ujęcia — bo niektórych rzeczy nie da się pokazać na zdjęciu.</p>
     <div class="video-grid" id="videoGrid"></div>
   </div>
 </section>
 
 <section class="cta-strip">
   <div class="cta-strip-inner">
-    <h2>Zainteresowany? Porozmawiajmy.</h2>
-    <p>Chętnie opowiem więcej — o folii, o wnętrzu, o tym, jak się tym jeździ.
+    <h2 data-i18n="cta.h2">Zainteresowany? Porozmawiajmy.</h2>
+    <p data-i18n="cta.p">Chętnie opowiem więcej — o folii, o wnętrzu, o tym, jak się tym jeździ.
     Cenę i szczegóły ustalamy w rozmowie.</p>
   </div>
 </section>
@@ -153,26 +155,26 @@
 <section class="contact" id="kontakt">
   <div class="contact-inner">
     <div class="contact-text">
-      <p class="section-label">05 — Kontakt</p>
-      <h2>Napisz do mnie</h2>
-      <p>Wypełnij formularz — otworzy się Twój program pocztowy z gotową wiadomością do mnie.
+      <p class="section-label" data-i18n="contact.label">05 — Kontakt</p>
+      <h2 data-i18n="contact.h2">Napisz do mnie</h2>
+      <p data-i18n="contact.p">Wypełnij formularz — otworzy się Twój program pocztowy z gotową wiadomością do mnie.
       Odpowiadam zwykle tego samego dnia.</p>
     </div>
     <form class="contact-form" id="contactForm">
       <div class="form-row">
-        <label for="name">Imię</label>
-        <input type="text" id="name" name="name" placeholder="Jak mam się zwracać?" required>
+        <label for="name" data-i18n="contact.nameLabel">Imię</label>
+        <input type="text" id="name" name="name" placeholder="Jak mam się zwracać?" data-i18n-placeholder="contact.namePh" required>
       </div>
       <div class="form-row">
-        <label for="email">E-mail lub telefon</label>
-        <input type="text" id="email" name="email" placeholder="Twój kontakt zwrotny" required>
+        <label for="email" data-i18n="contact.emailLabel">E-mail lub telefon</label>
+        <input type="text" id="email" name="email" placeholder="Twój kontakt zwrotny" data-i18n-placeholder="contact.emailPh" required>
       </div>
       <div class="form-row">
-        <label for="message">Wiadomość</label>
-        <textarea id="message" name="message" rows="4" placeholder="O co chciałbyś zapytać?" required></textarea>
+        <label for="message" data-i18n="contact.messageLabel">Wiadomość</label>
+        <textarea id="message" name="message" rows="4" placeholder="O co chciałbyś zapytać?" data-i18n-placeholder="contact.messagePh" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-wide">Wyślij wiadomość</button>
-      <p class="form-note">Po kliknięciu otworzy się okno Twojego klienta poczty (np. Mail, Gmail) z gotowym szablonem.</p>
+      <button type="submit" class="btn btn-primary btn-wide" data-i18n="contact.submit">Wyślij wiadomość</button>
+      <p class="form-note" data-i18n="contact.note">Po kliknięciu otworzy się okno Twojego klienta poczty (np. Mail, Gmail) z gotowym szablonem.</p>
     </form>
   </div>
 </section>
@@ -180,7 +182,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <span class="brand">STINGER<span>GT</span></span>
-    <p>Strona-hobby, nie ogłoszenie z automatu. Zdjęcia i wideo — własne.</p>
+    <p data-i18n="footer.p">Strona-hobby, nie ogłoszenie z automatu. Zdjęcia i wideo — własne.</p>
   </div>
 </footer>
 

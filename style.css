@@ -141,6 +141,20 @@ em { font-style: normal; color: var(--red-bright); }
 }
 .nav-toggle span { width: 22px; height: 2px; background: var(--text); display: block; }
 
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--text-dim);
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.7rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang-toggle:hover { color: var(--text); border-color: rgba(255,255,255,0.5); }
+
 /* HERO */
 .hero {
   position: relative;
