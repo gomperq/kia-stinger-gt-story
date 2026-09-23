@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "gompciu@gmail.com";
+const CONTACT_ENABLED = false;
 
 const translations = {
   pl: {
@@ -44,7 +44,7 @@ const translations = {
     "cta.p": "Chętnie opowiem więcej — o folii, o wnętrzu, o tym, jak się tym jeździ. Cenę i szczegóły ustalamy w rozmowie.",
     "contact.label": "05 — Kontakt",
     "contact.h2": "Napisz do mnie",
-    "contact.p": "Wypełnij formularz — otworzy się Twój program pocztowy z gotową wiadomością do mnie. Odpowiadam zwykle tego samego dnia.",
+    "contact.p": "Zostaw wiadomość — kontakt wkrótce wracam do pełnej funkcjonalności.",
     "contact.nameLabel": "Imię",
     "contact.namePh": "Jak mam się zwracać?",
     "contact.emailLabel": "E-mail lub telefon",
@@ -52,7 +52,8 @@ const translations = {
     "contact.messageLabel": "Wiadomość",
     "contact.messagePh": "O co chciałbyś zapytać?",
     "contact.submit": "Wyślij wiadomość",
-    "contact.note": "Po kliknięciu otworzy się okno Twojego klienta poczty (np. Mail, Gmail) z gotowym szablonem.",
+    "contact.note": "Formularz kontaktowy jest chwilowo wyłączony — wróć tu za jakiś czas.",
+    "contact.statusMsg": "Dzięki! Kontakt jest chwilowo niedostępny — spróbuj ponownie później.",
     "footer.p": "Strona-hobby, nie ogłoszenie z automatu. Zdjęcia i wideo — własne.",
     "meta.title": "Kia Stinger GT — historia jednej pasji",
     "meta.description": "Nie ogłoszenie. Historia białego Kia Stingera GT, który zamienił się w matowo-czerwoną bestię. Zdjęcia, wideo, detale i kontakt.",
@@ -103,7 +104,7 @@ const translations = {
     "cta.p": "I'm happy to tell you more — about the wrap, the interior, what it's like to drive. Price and details we work out in conversation.",
     "contact.label": "05 — Contact",
     "contact.h2": "Get in touch",
-    "contact.p": "Fill out the form — it'll open your email client with a ready-made message to me. I usually reply the same day.",
+    "contact.p": "Leave a message — I'll be back to full contact functionality soon.",
     "contact.nameLabel": "Name",
     "contact.namePh": "What should I call you?",
     "contact.emailLabel": "Email or phone",
@@ -111,7 +112,8 @@ const translations = {
     "contact.messageLabel": "Message",
     "contact.messagePh": "What would you like to ask?",
     "contact.submit": "Send message",
-    "contact.note": "Clicking this opens your email client (e.g. Mail, Gmail) with a pre-filled template.",
+    "contact.note": "The contact form is temporarily disabled — check back soon.",
+    "contact.statusMsg": "Thanks! Contact is temporarily unavailable — please try again later.",
     "footer.p": "A hobby page, not an auto-generated listing. Photos and video — all my own.",
     "meta.title": "Kia Stinger GT — a passion project story",
     "meta.description": "Not a listing. The story of a white Kia Stinger GT that became a matte red-and-black beast. Photos, video, details and contact.",
@@ -238,6 +240,11 @@ document.querySelectorAll(".nav-links a").forEach((a) =>
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  if (!CONTACT_ENABLED) {
+    const status = document.getElementById("formStatus");
+    if (status) status.hidden = false;
+    return;
+  }
   const name = document.getElementById("name").value;
   const contact = document.getElementById("email").value;
   const message = document.getElementById("message").value;
