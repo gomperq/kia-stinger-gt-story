@@ -53,7 +53,7 @@ const translations = {
     "contact.messagePh": "O co chciałbyś zapytać?",
     "contact.submit": "Wyślij wiadomość",
     "contact.note": "Formularz kontaktowy jest chwilowo wyłączony — wróć tu za jakiś czas.",
-    "contact.statusMsg": "Dzięki! Kontakt jest chwilowo niedostępny — spróbuj ponownie później.",
+    "contact.statusMsg": "Kontakt jest chwilowo niedostępny — spróbuj ponownie później.",
     "footer.p": "Strona-hobby, nie ogłoszenie z automatu. Zdjęcia i wideo — własne.",
     "meta.title": "Kia Stinger GT — historia jednej pasji",
     "meta.description": "Nie ogłoszenie. Historia białego Kia Stingera GT, który zamienił się w matowo-czerwoną bestię. Zdjęcia, wideo, detale i kontakt.",
@@ -113,7 +113,7 @@ const translations = {
     "contact.messagePh": "What would you like to ask?",
     "contact.submit": "Send message",
     "contact.note": "The contact form is temporarily disabled — check back soon.",
-    "contact.statusMsg": "Thanks! Contact is temporarily unavailable — please try again later.",
+    "contact.statusMsg": "Contact is temporarily unavailable — please try again later.",
     "footer.p": "A hobby page, not an auto-generated listing. Photos and video — all my own.",
     "meta.title": "Kia Stinger GT — a passion project story",
     "meta.description": "Not a listing. The story of a white Kia Stinger GT that became a matte red-and-black beast. Photos, video, details and contact.",
@@ -278,3 +278,25 @@ window.addEventListener("scroll", () => {
   nav.style.borderBottomColor = current > 20 ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.08)";
   lastScroll = current;
 });
+
+const navSections = ["historia", "detale", "galeria", "wideo", "kontakt"]
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+const navLinkMap = {};
+document.querySelectorAll(".nav-links a[href^='#']").forEach((a) => {
+  navLinkMap[a.getAttribute("href").slice(1)] = a;
+});
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const link = navLinkMap[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        Object.values(navLinkMap).forEach((a) => a.classList.remove("active-link"));
+        link.classList.add("active-link");
+      }
+    });
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
+navSections.forEach((s) => sectionObserver.observe(s));
